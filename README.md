@@ -3,11 +3,11 @@
 
 
 # Group Members
-Blake Harper
-Brian Hebert
-Will Jordan
-Simeon Cuenco
-Gilad Bitton
+Blake Harper,
+Brian Hebert,
+Will Jordan,
+Simeon Cuenco,
+Gilad Bitton and
 Daniel Wen
 
 # Current Target
