@@ -1,4 +1,10 @@
 ﻿<Solution>
+  <Project Path="HeyHeyThere.EscapePuzzleKitFree.csproj" />
+  <Project Path="HeyHeyThere.EscapePuzzleKitFree.Demo.csproj" />
+  <Project Path="HeyHeyThere.LowPolyPrison.csproj" />
+  <Project Path="HeyHeyThere.LowPolyBunkerFree.csproj" />
   <Project Path="Assembly-CSharp.csproj" />
+  <Project Path="HeyHeyThere.LowPolySciFiStationFree.csproj" />
+  <Project Path="HeyHeyThere.LowPolyIndustrialFacilityFree.csproj" />
   <Project Path="Assembly-CSharp-Editor.csproj" />
 </Solution>

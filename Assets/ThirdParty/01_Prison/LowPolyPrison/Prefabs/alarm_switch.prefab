@@ -1,0 +1,174 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &616392469571890451
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -5716681864270162303, guid: ef176cf3533eeb5f99f3abd64861d385, type: 3}
+      propertyPath: m_PlayAutomatically
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: ef176cf3533eeb5f99f3abd64861d385, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: ef176cf3533eeb5f99f3abd64861d385, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: ef176cf3533eeb5f99f3abd64861d385, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: ef176cf3533eeb5f99f3abd64861d385, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: ef176cf3533eeb5f99f3abd64861d385, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: ef176cf3533eeb5f99f3abd64861d385, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: ef176cf3533eeb5f99f3abd64861d385, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: ef176cf3533eeb5f99f3abd64861d385, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: ef176cf3533eeb5f99f3abd64861d385, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: ef176cf3533eeb5f99f3abd64861d385, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: ef176cf3533eeb5f99f3abd64861d385, type: 3}
+      propertyPath: m_Name
+      value: alarm_switch
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: -927199367670048503, guid: ef176cf3533eeb5f99f3abd64861d385, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8126375099455626608}
+    - targetCorrespondingSourceObject: {fileID: -8015369765218399526, guid: ef176cf3533eeb5f99f3abd64861d385, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 343809422902994945}
+    - targetCorrespondingSourceObject: {fileID: -2815528817569657085, guid: ef176cf3533eeb5f99f3abd64861d385, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7952909720852328618}
+  m_SourcePrefab: {fileID: 100100000, guid: ef176cf3533eeb5f99f3abd64861d385, type: 3}
+--- !u!1 &1751462671427741641 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -8015369765218399526, guid: ef176cf3533eeb5f99f3abd64861d385, type: 3}
+  m_PrefabInstance: {fileID: 616392469571890451}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &343809422902994945
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1751462671427741641}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.14, y: 0.5156001, z: 0.06}
+  m_Center: {x: 0, y: 1.5578, z: -0.03}
+--- !u!1 &5791882945898504720 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -2815528817569657085, guid: ef176cf3533eeb5f99f3abd64861d385, type: 3}
+  m_PrefabInstance: {fileID: 616392469571890451}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &7952909720852328618
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5791882945898504720}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.09, y: 0.024999976, z: 0.030000001}
+  m_Center: {x: 0, y: -0.000000059604645, z: -0.009999998}
+--- !u!1 &8911551333803340826 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: ef176cf3533eeb5f99f3abd64861d385, type: 3}
+  m_PrefabInstance: {fileID: 616392469571890451}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8126375099455626608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8911551333803340826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ff3d51405fb5bfd9b3fe8d4eade25a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: HeyHeyThere.LowPolyPrison::HeyHeyThere.LowPolyPrison.Machine
+  kind: 0
+  on: 0
+  needs: []
+  clip: pull
+  run: 
+  level: 
+  steps: 1
+  takes: 
+  keep: 0
+  motor: 0
+  item: 
+  code: 
+  lit: []
+  idle: []
+  fitted: []
+  onUsed:
+    m_PersistentCalls:
+      m_Calls: []
+  onSwitched:
+    m_PersistentCalls:
+      m_Calls: []
+  onLive:
+    m_PersistentCalls:
+      m_Calls: []
+  onRefused:
+    m_PersistentCalls:
+      m_Calls: []
+  onKeyed:
+    m_PersistentCalls:
+      m_Calls: []
+  onPicked:
+    m_PersistentCalls:
+      m_Calls: []

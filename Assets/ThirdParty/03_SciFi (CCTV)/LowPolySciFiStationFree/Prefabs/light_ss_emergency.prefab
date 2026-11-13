@@ -1,0 +1,175 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &7319143960077186663
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -5716681864270162303, guid: a5a28f7f79732d22c5e7c3f6f9900f52, type: 3}
+      propertyPath: m_PlayAutomatically
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: a5a28f7f79732d22c5e7c3f6f9900f52, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: a5a28f7f79732d22c5e7c3f6f9900f52, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: a5a28f7f79732d22c5e7c3f6f9900f52, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: a5a28f7f79732d22c5e7c3f6f9900f52, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: a5a28f7f79732d22c5e7c3f6f9900f52, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: a5a28f7f79732d22c5e7c3f6f9900f52, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: a5a28f7f79732d22c5e7c3f6f9900f52, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: a5a28f7f79732d22c5e7c3f6f9900f52, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: a5a28f7f79732d22c5e7c3f6f9900f52, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: a5a28f7f79732d22c5e7c3f6f9900f52, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: a5a28f7f79732d22c5e7c3f6f9900f52, type: 3}
+      propertyPath: m_Name
+      value: light_ss_emergency
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: -927199367670048503, guid: a5a28f7f79732d22c5e7c3f6f9900f52, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4125813311992080977}
+    - targetCorrespondingSourceObject: {fileID: 8773682149534551295, guid: a5a28f7f79732d22c5e7c3f6f9900f52, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5515924462431205106}
+    - targetCorrespondingSourceObject: {fileID: -9108367618363740388, guid: a5a28f7f79732d22c5e7c3f6f9900f52, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 655982502396962297}
+  m_SourcePrefab: {fileID: 100100000, guid: a5a28f7f79732d22c5e7c3f6f9900f52, type: 3}
+--- !u!1 &1635721120555986798 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: a5a28f7f79732d22c5e7c3f6f9900f52, type: 3}
+  m_PrefabInstance: {fileID: 7319143960077186663}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4125813311992080977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1635721120555986798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f79b245f163ccc183b3a3750c02e902, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: HeyHeyThere.LowPolySciFiStationFree::HeyHeyThere.LowPolySciFiStationFree.Machine
+  kind: 7
+  on: 1
+  needs: []
+  clip: 
+  run: spin
+  level: 
+  steps: 1
+  takes: 
+  keep: 0
+  motor: 0
+  item: 
+  code: 
+  lit:
+  - light_ss_emergency_lens
+  idle: []
+  fitted: []
+  onUsed:
+    m_PersistentCalls:
+      m_Calls: []
+  onSwitched:
+    m_PersistentCalls:
+      m_Calls: []
+  onLive:
+    m_PersistentCalls:
+      m_Calls: []
+  onRefused:
+    m_PersistentCalls:
+      m_Calls: []
+  onKeyed:
+    m_PersistentCalls:
+      m_Calls: []
+  onPicked:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!1 &2040328307864107672 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8773682149534551295, guid: a5a28f7f79732d22c5e7c3f6f9900f52, type: 3}
+  m_PrefabInstance: {fileID: 7319143960077186663}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &5515924462431205106
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2040328307864107672}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.2, y: 0.059999943, z: 0.19}
+  m_Center: {x: 0, y: 2.52, z: -0.095}
+--- !u!1 &7208645965406443899 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -9108367618363740388, guid: a5a28f7f79732d22c5e7c3f6f9900f52, type: 3}
+  m_PrefabInstance: {fileID: 7319143960077186663}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &655982502396962297
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7208645965406443899}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.13, y: 0.125, z: 0.13299999}
+  m_Center: {x: 0, y: 0.0625, z: -0.0014999993}

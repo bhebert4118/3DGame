@@ -1,0 +1,141 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1935461708605986687
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -4216859302048453862, guid: e95c8f30059c14eb19f9ccfbf857dcc7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: e95c8f30059c14eb19f9ccfbf857dcc7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: e95c8f30059c14eb19f9ccfbf857dcc7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: e95c8f30059c14eb19f9ccfbf857dcc7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: e95c8f30059c14eb19f9ccfbf857dcc7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: e95c8f30059c14eb19f9ccfbf857dcc7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: e95c8f30059c14eb19f9ccfbf857dcc7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: e95c8f30059c14eb19f9ccfbf857dcc7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: e95c8f30059c14eb19f9ccfbf857dcc7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: e95c8f30059c14eb19f9ccfbf857dcc7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: e95c8f30059c14eb19f9ccfbf857dcc7, type: 3}
+      propertyPath: m_Name
+      value: keycard_ss
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: -927199367670048503, guid: e95c8f30059c14eb19f9ccfbf857dcc7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7798171249413768154}
+    - targetCorrespondingSourceObject: {fileID: 6569322771569277707, guid: e95c8f30059c14eb19f9ccfbf857dcc7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 833534498230482910}
+  m_SourcePrefab: {fileID: 100100000, guid: e95c8f30059c14eb19f9ccfbf857dcc7, type: 3}
+--- !u!1 &4753206814992100468 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6569322771569277707, guid: e95c8f30059c14eb19f9ccfbf857dcc7, type: 3}
+  m_PrefabInstance: {fileID: 1935461708605986687}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &833534498230482910
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4753206814992100468}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.12, y: 0.12, z: 0.12}
+  m_Center: {x: 0, y: 0.001, z: 0}
+--- !u!1 &7637481807186480758 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: e95c8f30059c14eb19f9ccfbf857dcc7, type: 3}
+  m_PrefabInstance: {fileID: 1935461708605986687}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7798171249413768154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7637481807186480758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f79b245f163ccc183b3a3750c02e902, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: HeyHeyThere.LowPolySciFiStationFree::HeyHeyThere.LowPolySciFiStationFree.Machine
+  kind: 6
+  on: 0
+  needs: []
+  clip: 
+  run: 
+  level: 
+  steps: 1
+  takes: 
+  keep: 0
+  motor: 0
+  item: keycard_ss
+  code: 
+  lit: []
+  idle: []
+  fitted: []
+  onUsed:
+    m_PersistentCalls:
+      m_Calls: []
+  onSwitched:
+    m_PersistentCalls:
+      m_Calls: []
+  onLive:
+    m_PersistentCalls:
+      m_Calls: []
+  onRefused:
+    m_PersistentCalls:
+      m_Calls: []
+  onKeyed:
+    m_PersistentCalls:
+      m_Calls: []
+  onPicked:
+    m_PersistentCalls:
+      m_Calls: []
