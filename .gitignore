@@ -17,11 +17,17 @@
 *.csproj
 *.sln
 *.suo
+*.unityproj
+*.tmp
 *.user
 *.userprefs
 *.pidb
 *.booproj
 *.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
 
 # Rider
 .idea/

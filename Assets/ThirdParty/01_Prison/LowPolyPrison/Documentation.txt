@@ -1,0 +1,173 @@
+Low Poly Prison
+
+Documentation
+
+Every prop is a prefab in Assets/LowPolyPrison/Prefabs/: drag it into a scene. 1 unit = 1 m; a prop's pivot
+is on the floor (or, for a wall prop, on the wall) it rests against. Each part has a box collider.
+
+Look
+Every prefab uses Materials/, on the shader LowPolyPrison/Stylized Lit: the texture times the occlusion baked into the
+vertex colours (Baked Occlusion), lit by the scene's lights with a soft falloff (Light Wrap), casting and
+taking shadows, with fog; Glow Map's texels light themselves (lamps, screens, signs; Glow Strength).
+Render pipelines: Built-in and URP: every material uses the pack's own lit shader, with a SubShader for each. Not HDRP, where the materials show magenta until given an HDRP Lit shader.
+
+Animations
+A prop with moving parts has an Animation component with its clips. Standalone decorative loops start automatically.
+Clips controlled by use, pickup, gun or melee behavior wait for that control. Play a clip directly with:
+    GetComponent<Animation>().Play("open");
+Demo/Demo.unity circles the props and plays every animation in turn (Scripts/PropsDemo.cs).
+Demo/Level.unity is a level of 286 of them to walk (Scripts/LevelWalker.cs): WASD or the
+arrows and the mouse, Shift runs, E uses what is in front of you, Esc frees the mouse.
+
+Machines
+A prop that works (its kind is in the list below) has Scripts/Machine.cs on its prefab, set up in the
+inspector: its kind (what a use does: Switch, Button, Turn, Slot, Keypad, Panel, Item, Powered, Gauge),
+the machines it needs to be powered, and UnityEvents for what it does (onSwitched, onLive, onRefused,
+onUsed, onKeyed, onPicked). Machine.cs's comments say what each kind does.
+    lever.Use(carried);                     // the player's use; carried: the items they hold
+    keypad.Use(carried, "keypad_key_4");    // a key: the part they point at
+    door.needs = new[] { lever };           // the door is powered while the lever is on
+
+Textures: atlas.png 2048x2048, atlas_glow.png 2048x2048, ceiling_prison.png 128x128, ceiling_prison_dirty.png 128x128, floor_canteen.png 128x128, floor_cell.png 128x128, floor_concrete.png 128x128, floor_epoxy_prison.png 128x128, floor_grating.png 128x128, floor_prison.png 128x128, floor_prison_worn.png 128x128, floor_shower.png 128x128, floor_yard.png 128x128, floor_yard_line.png 128x128, roof_skylight.png 128x128, wall_cell.png 128x128, wall_cell_dado.png 128x128, wall_prison.png 128x128, wall_prison_dado.png 128x128, wall_prison_dado_dirty.png 128x128, wall_prison_dirty.png 128x128, wall_prison_marked.png 128x128, wall_shower.png 128x128, wall_yard.png 128x128, wall_yard_foot.png 128x128, filtered with mipmaps, colour only: the shading is baked into vertex colours, so no normal maps.
+Icons/: an inventory icon per prop, named after it, imported as a UI sprite.
+
+Props (triangles, size in metres: width x height x depth, animations)
+- floor_prison: Polished Concrete Floor, 8 tris, 2 x 0 x 2
+- floor_prison_worn: Worn Concrete Floor, 8 tris, 2 x 0 x 2
+- floor_epoxy_prison: Epoxy Floor, 8 tris, 2 x 0 x 2
+- floor_canteen: Canteen Floor, 8 tris, 2 x 0 x 2
+- floor_shower: Shower Floor, 8 tris, 2 x 0 x 2
+- floor_shower_drain: Shower Floor with a Drain, 52 tris, 2 x 0.006 x 2
+- floor_cell: Cell Floor, 8 tris, 2 x 0 x 2
+- floor_yard: Yard Asphalt, 8 tris, 2 x 0 x 2
+- floor_yard_line: Yard Asphalt with a Line, 8 tris, 2 x 0 x 2
+- floor_prison_upper: Landing Floor, 32 tris, 2 x 0.3 x 2
+- floor_gallery: Gallery Grating, 48 tris, 2 x 0.22 x 2
+- ceiling_prison: Prison Ceiling, 8 tris, 2 x 0 x 2
+- ceiling_prison_dirty: Dirty Prison Ceiling, 8 tris, 2 x 0 x 2
+- ceiling_prison_beam: Beamed Prison Ceiling, 14 tris, 2 x 0.5 x 2
+- ceiling_skylight: Roof Light Ceiling, 104 tris, 2 x 0.305 x 2
+- wall_prison: Painted Block Wall, 36 tris, 2 x 4 x 0.25
+- wall_prison_dirty: Dirty Block Wall, 36 tris, 2 x 4 x 0.25
+- wall_prison_marked: Marked Block Wall, 36 tris, 2 x 4 x 0.25
+- wall_cell: Cell Wall, 36 tris, 2 x 4 x 0.25
+- wall_cell_outer: Cell Back Wall, 36 tris, 2 x 4 x 0.25
+- wall_shower: Shower Wall, 36 tris, 2 x 4 x 0.25
+- wall_yard: Perimeter Wall, 60 tris, 2 x 4.65 x 0.7
+- wall_prison_half: Half Block Wall, 18 tris, 1 x 4 x 0.25
+- wall_prison_low: Low Block Wall, 20 tris, 2 x 1.1 x 0.25
+- wall_prison_post: Block Post, 34 tris, 0.25 x 4 x 0.25
+- wall_cell_post: Cell Post, 34 tris, 0.25 x 4 x 0.25
+- wall_yard_post: Perimeter Post, 34 tris, 0.25 x 4 x 0.25
+- column_prison: Block Column, 34 tris, 0.5 x 4 x 0.5
+- bars_cell: Cell Front Bars, 316 tris, 2 x 4 x 0.1
+- bars_cell_door: Cell Front with a Door, 408 tris, 1.99 x 4 x 0.1
+- wall_prison_doorway: Block Doorway, 72 tris, 2 x 4 x 0.25
+- wall_prison_wide: Wide Block Doorway, 72 tris, 2 x 4 x 0.25
+- wall_cell_doorway: Cell Doorway, 72 tris, 2 x 4 x 0.25
+- wall_cell_window: Cell Window Wall, 220 tris, 2 x 4 x 0.31
+- wall_prison_window: Barred Window Wall, 304 tris, 2 x 4 x 0.31
+- wall_control_window: Control Room Window, 218 tris, 2 x 4 x 0.75
+- wall_visit_window: Visiting Window, 184 tris, 2 x 4 x 0.75
+- wall_yard_gateway: Perimeter Gateway, 96 tris, 2 x 4.65 x 0.7
+- railing_gallery: Landing Railing, 244 tris, 2 x 1.13 x 0.06
+- netting_gallery: Landing Safety Net, 296 tris, 2 x 0.144 x 2
+- stairs_prison: Wing Stairs, 768 tris, 2 x 5.021 x 6
+- cell_door: Sliding Cell Door, 486 tris, 2 x 2.45 x 0.194, open; a machine, powered
+- cell_door_solid: Solid Cell Door, 524 tris, 1.14 x 2.28 x 0.425, open, look, hatch; a machine, slot
+- prison_key: Wing Key, 272 tris, 0.207 x 0.017 x 0.048; a machine, item
+- bunk_bed: Steel Bunk Bed, 608 tris, 2.05 x 1.9 x 0.85
+- bed_cell: Cell Bed, 176 tris, 1.95 x 0.6 x 0.77
+- toilet_sink: Steel Toilet and Basin, 342 tris, 0.55 x 1.1 x 0.71
+- desk_cell: Cell Desk and Stool, 210 tris, 0.9 x 0.77 x 0.91
+- shelf_cell: Cell Shelf, 60 tris, 0.9 x 0.397 x 0.25
+- mirror_cell: Steel Mirror, 124 tris, 0.32 x 0.42 x 0.023
+- mattress_floor: Mattress on the Floor, 176 tris, 1.992 x 0.2 x 1.478
+- prison_supply: Wing Supply, 1032 tris, 0.6 x 1.539 x 0.354, turn; a machine, switch
+- locking_box: Cell Locking Box, 436 tris, 0.59 x 1.139 x 0.259, throw; a machine, switch
+- control_desk: Control Desk, 1364 tris, 1.64 x 1.101 x 0.874, control_desk_key_1, control_desk_key_2, control_desk_key_3, control_desk_key_4; a machine, panel
+- monitor_bank: Monitor Bank, 112 tris, 1.2 x 1.05 x 0.305; a machine, powered
+- keycard: Staff Keycard, 12 tris, 0.054 x 0.002 x 0.086; a machine, item
+- card_reader: Card Reader, 212 tris, 0.09 x 0.188 x 0.097, swipe; a machine, slot
+- keypad_prison: Door Keypad, 672 tris, 0.12 x 0.2 x 0.05, keypad_prison_key_1, keypad_prison_key_2, keypad_prison_key_3, keypad_prison_key_4, keypad_prison_key_5, keypad_prison_key_6, keypad_prison_key_7, keypad_prison_key_8, keypad_prison_key_9, keypad_prison_key_C, keypad_prison_key_0; a machine, keypad
+- door_security: Security Door, 308 tris, 1.18 x 2.3 x 0.365, open; a machine, powered
+- gate_barred: Sliding Barred Gate, 458 tris, 3.4 x 3.02 x 0.179, open; a machine, powered
+- gate_barred_swing: Barred Swing Gate, 496 tris, 1.14 x 2.28 x 0.408, open; a machine, slot
+- metal_detector: Metal Detector Arch, 388 tris, 1.1 x 2.4 x 0.639; a machine, powered
+- xray_scanner: Baggage X-Ray, 898 tris, 2.525 x 1.66 x 0.935, belt; a machine, powered
+- alarm_switch: Alarm Pull, 140 tris, 0.14 x 0.516 x 0.095, pull; a machine, switch
+- alarm_beacon: Alarm Beacon, 358 tris, 0.16 x 0.23 x 0.28, spin; a machine, powered
+- cctv_prison: Security Camera, 232 tris, 0.17 x 0.268 x 0.566, pan; a machine, powered
+- cell_intercom: Cell Call Point, 224 tris, 0.12 x 0.22 x 0.039, press; a machine, switch
+- visit_phone: Visiting Phone, 488 tris, 0.12 x 0.438 x 0.105, lift; a machine, switch
+- fence_chainlink: Chain-Link Fence, 560 tris, 2.12 x 3.1 x 0.12
+- fence_razor: Razor Wire Fence, 2652 tris, 2.12 x 3.608 x 0.55
+- razor_coil: Razor Wire Coil, 2028 tris, 1.961 x 0.516 x 0.48
+- yard_gate: Yard Gate, 686 tris, 3.5 x 2.76 x 0.159, open; a machine, powered
+- barrier_arm: Barrier Arm, 428 tris, 3.91 x 1.04 x 0.414, open; a machine, powered
+- searchlight: Searchlight, 564 tris, 0.6 x 1.624 x 0.705, sweep; a machine, powered
+- watchtower: Watchtower, 1168 tris, 2.9 x 7.58 x 3.607
+- floodlight_pole: Floodlight Pole, 244 tris, 1.55 x 7.6 x 0.369; a machine, powered
+- basketball_hoop: Basketball Hoop, 372 tris, 1.8 x 3.925 x 1.64
+- pullup_bars: Pull-Up and Dip Bars, 392 tris, 3.32 x 2.4 x 0.56
+- weight_bench: Weight Bench, 412 tris, 2 x 1.27 x 1.364
+- weight_plates: Stack of Weight Plates, 996 tris, 0.46 x 0.209 x 0.45
+- yard_table: Yard Table, 236 tris, 1.6 x 0.793 x 1.7
+- canteen_table: Canteen Table, 492 tris, 1.471 x 0.76 x 1.471
+- serving_counter: Servery Counter, 344 tris, 2.42 x 1.354 x 1.05
+- tray_food: Food Tray, 220 tris, 0.46 x 0.11 x 0.34
+- tray_stack: Stack of Trays, 108 tris, 0.477 x 0.196 x 0.364
+- cup_prison: Plastic Cup, 80 tris, 0.076 x 0.09 x 0.072
+- washer: Industrial Washer, 912 tris, 0.904 x 1.4 x 0.965, start, spin; a machine, switch
+- laundry_cart: Laundry Cart, 580 tris, 0.94 x 0.863 x 0.58
+- laundry_shelf: Laundry Shelving, 708 tris, 1.2 x 1.912 x 0.45
+- laundry_bag: Laundry Bag, 188 tris, 0.526 x 0.524 x 0.425
+- shower_head: Shower Head, 250 tris, 0.12 x 1.183 x 0.227
+- shower_partition: Shower Partition, 80 tris, 0.1 x 2 x 1.25
+- shower_bench: Changing Bench, 108 tris, 1.2 x 0.336 x 0.35
+- visit_booth: Visits Booth, 156 tris, 1.034 x 1.902 x 0.77
+- guard_desk: Officers' Desk, 240 tris, 1.6 x 1.16 x 0.8
+- guard_chair: Office Chair, 244 tris, 0.567 x 1.05 x 0.585
+- locker_staff: Staff Locker, 248 tris, 0.5 x 1.8 x 0.54, open; a machine, switch
+- key_cabinet: Key Cabinet, 860 tris, 0.5 x 0.6 x 0.154, open; a machine, switch
+- clock_prison: Caged Wall Clock, 308 tris, 0.452 x 0.452 x 0.126, tick; a machine, powered
+- riot_rack: Riot Gear Rack, 602 tris, 1.5 x 1.665 x 0.3
+- infirmary_bed: Infirmary Bed, 812 tris, 2.07 x 0.968 x 0.944, raise; a machine, switch
+- book_trolley: Library Trolley, 388 tris, 1.036 x 1.03 x 0.45
+- lamp_cage_prison: Caged Bulkhead, 212 tris, 0.32 x 0.718 x 0.127; a machine, powered
+- lamp_strip_prison: Sealed Ceiling Batten, 68 tris, 0.22 x 0.077 x 1.6; a machine, powered
+- lamp_pendant_prison: Steel Pendant, 300 tris, 0.68 x 1.006 x 0.68; a machine, powered
+- floodlight_wall_prison: Wall Floodlight, 172 tris, 0.45 x 0.319 x 0.472; a machine, powered
+- exit_prison: Emergency Exit Light, 140 tris, 0.34 x 0.436 x 0.073; a machine, powered
+- sign_wing_a: Wing A Sign, 92 tris, 0.8 x 0.15 x 0.02
+- sign_wing_b: Wing B Sign, 92 tris, 0.8 x 0.15 x 0.02
+- sign_visits: Visits Sign, 92 tris, 0.8 x 0.15 x 0.02
+- sign_yard: Exercise Yard Sign, 92 tris, 0.8 x 0.15 x 0.02
+- sign_servery: Servery Sign, 92 tris, 0.8 x 0.15 x 0.02
+- sign_control: Control Room Sign, 92 tris, 0.8 x 0.15 x 0.02
+- sign_staff_only: Staff Only Sign, 92 tris, 0.8 x 0.15 x 0.02
+- sign_name_prison: Prison Name Board, 92 tris, 2.4 x 0.45 x 0.038
+- sign_keep_clear: Keep Clear Sign, 92 tris, 0.4 x 0.2 x 0.02
+- sign_search: Search Notice, 92 tris, 0.4 x 0.3 x 0.02
+- sign_contraband: Contraband Notice, 92 tris, 0.4 x 0.3 x 0.02
+- sign_cells: Landing Sign, 92 tris, 0.4 x 0.15 x 0.02
+- rules_prison: Wing Rules, 14 tris, 0.45 x 0.65 x 0.027
+- notice_board_prison: Notice Board, 14 tris, 1.25 x 0.85 x 0.027
+- height_chart: Height Chart, 12 tris, 0.3 x 0.7 x 0.008
+- first_aid_prison: First Aid Box, 56 tris, 0.4 x 0.32 x 0.13
+- speaker_prison: Wall Speaker, 56 tris, 0.3 x 0.236 x 0.165
+- books_prison: Stack of Paperbacks, 60 tris, 0.163 x 0.126 x 0.217
+- book_open: Open Book, 48 tris, 0.226 x 0.024 x 0.172
+- cards_prison: Playing Cards, 72 tris, 0.243 x 0.016 x 0.12
+- letters_prison: Letters, 48 tris, 0.433 x 0.01 x 0.314
+- photo_prison: Photograph, 24 tris, 0.15 x 0.099 x 0.052
+- toiletries: Toiletries, 174 tris, 0.345 x 0.171 x 0.167
+- toilet_roll: Toilet Roll, 66 tris, 0.11 x 0.102 x 0.11
+- uniform_folded: Folded Uniform, 264 tris, 0.34 x 0.175 x 0.28
+- tv_cell: Cell Television, 204 tris, 0.36 x 0.505 x 0.312
+- kettle_cell: Kettle, 162 tris, 0.222 x 0.235 x 0.17
+- bin_prison: Steel Bin, 178 tris, 0.348 x 0.789 x 0.419
+- mop_bucket: Mop Bucket, 272 tris, 0.569 x 1.402 x 0.32
+- handcuffs: Handcuffs, 532 tris, 0.212 x 0.017 x 0.08
+- baton: Baton, 56 tris, 0.552 x 0.036 x 0.036
+- radio_officer: Officer's Radio, 116 tris, 0.06 x 0.2 x 0.038

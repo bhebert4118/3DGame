@@ -1,0 +1,13 @@
+{
+    "name": "HeyHeyThere.LowPolySciFiStationFree",
+    "rootNamespace": "HeyHeyThere.LowPolySciFiStationFree",
+    "references": ["Unity.InputSystem"],
+    "autoReferenced": true,
+    "versionDefines": [
+        {
+            "name": "com.unity.inputsystem",
+            "expression": "1.0.0",
+            "define": "INPUT_SYSTEM_PACKAGE"
+        }
+    ]
+}
