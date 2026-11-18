@@ -6,14 +6,14 @@ using UnityEngine.Events;
 /// from whatever interaction system you use (button press, trigger, UnityEvent...).
 /// Opens the alarm puzzle and raises <see cref="onSolved"/> when the player solves it.
 /// </summary>
-public class AlarmComputerInteractable : MonoBehaviour
+public class AlarmComputerInteractable : Interactable
 {
     [Tooltip("Hook up the alarm / guard reaction here (or subscribe in code).")]
     public UnityEvent onSolved;
 
     private bool _solved;
 
-    public void Interact()
+    protected override void OnInteract()
     {
         if (_solved) return; // already triggered the alarm
         AlarmPuzzleLauncher.Open(onSolved: () =>
