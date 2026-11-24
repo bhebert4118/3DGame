@@ -1,0 +1,48 @@
+Low Poly Sci-Fi Station Free
+
+Documentation
+
+Every prop is a prefab in Assets/LowPolySciFiStationFree/Prefabs/: drag it into a scene. 1 unit = 1 m; a prop's pivot
+is on the floor (or, for a wall prop, on the wall) it rests against. Each part has a box collider.
+
+Look
+Every prefab uses Materials/, on the shader LowPolySciFiStationFree/Stylized Lit: the texture times the occlusion baked into the
+vertex colours (Baked Occlusion), lit by the scene's lights with a soft falloff (Light Wrap), casting and
+taking shadows, with fog; Glow Map's texels light themselves (lamps, screens, signs; Glow Strength).
+Render pipelines: Built-in and URP: every material uses the pack's own lit shader, with a SubShader for each. Not HDRP, where the materials show magenta until given an HDRP Lit shader.
+
+Animations
+A prop with moving parts has an Animation component with its clips. Standalone decorative loops start automatically.
+Clips controlled by use, pickup, gun or melee behavior wait for that control. Play a clip directly with:
+    GetComponent<Animation>().Play("open");
+Demo/Demo.unity circles the props and plays every animation in turn (Scripts/PropsDemo.cs).
+
+Machines
+A prop that works (its kind is in the list below) has Scripts/Machine.cs on its prefab, set up in the
+inspector: its kind (what a use does: Switch, Button, Turn, Slot, Keypad, Panel, Item, Powered, Gauge),
+the machines it needs to be powered, and UnityEvents for what it does (onSwitched, onLive, onRefused,
+onUsed, onKeyed, onPicked). Machine.cs's comments say what each kind does.
+    lever.Use(carried);                     // the player's use; carried: the items they hold
+    keypad.Use(carried, "keypad_key_4");    // a key: the part they point at
+    door.needs = new[] { lever };           // the door is powered while the lever is on
+
+Textures: atlas.png 2048x2048, atlas_glow.png 2048x2048, lit_ss_stars.png 128x128, ss_deck.png 128x128, ss_wall.png 128x128, ss_wall_kick.png 128x128, ss_wall_top.png 128x128, filtered with mipmaps, colour only: the shading is baked into vertex colours, so no normal maps.
+Icons/: an inventory icon per prop, named after it, imported as a UI sprite.
+
+Props (triangles, size in metres: width x height x depth, animations)
+- floor_ss: Deck Floor, 8 tris, 2 x 0 x 2
+- wall_ss: Room Wall, 28 tris, 2 x 3 x 0.25
+- wall_ss_doorway: Room Doorway, 56 tris, 2 x 3 x 0.25
+- wall_ss_window_wide: Wide Window Wall, 484 tris, 4 x 3 x 0.405
+- wall_ss_post: Room Wall Post, 26 tris, 0.25 x 3 x 0.25
+- door_ss: Sliding Door, 512 tris, 1.28 x 2.42 x 0.397, open; a machine, powered
+- card_reader_ss: Card Reader, 324 tris, 0.13 x 0.223 x 0.089, swipe; a machine, slot
+- keycard_ss: Crew Keycard, 44 tris, 0.086 x 0.002 x 0.054; a machine, item
+- console_ss: Console, 1428 tris, 1.22 x 1.399 x 0.72, press; a machine, switch
+- chair_ss: Swivel Chair, 508 tris, 0.65 x 1.031 x 0.596
+- breaker_ss: Main Breaker, 294 tris, 0.5 x 1.245 x 0.308, throw; a machine, switch
+- rack_ss: Server Rack, 68 tris, 0.7 x 2.2 x 0.913; a machine, powered
+- screen_ss_map: Wall Screen, Plan, 160 tris, 1.5 x 0.9 x 0.077; a machine, powered
+- crate_ss: Cargo Crate, 68 tris, 1.024 x 1 x 1
+- light_ss_emergency: Emergency Beacon, 182 tris, 0.2 x 0.185 x 0.19, spin; a machine, powered
+- starfield_ss: Starfield, 528 tris, 80 x 79.696 x 79.696

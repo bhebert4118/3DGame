@@ -1,5 +1,3 @@
-.DS_Store
-
 # Unity generated folders
 [Ll]ibrary/
 [Tt]emp/
@@ -8,12 +6,18 @@
 [Bb]uilds/
 [Ll]ogs/
 [Uu]ser[Ss]ettings/
-MemoryCaptures/
-Recordings/
+
+# Memory captures and generated state
+[Mm]emoryCaptures/
+[Rr]ecordings/
+
+# Visual Studio / IDE files
+.vs/
+.vscode/
 *.csproj
-*.unityproj
 *.sln
 *.suo
+*.unityproj
 *.tmp
 *.user
 *.userprefs
@@ -24,3 +28,22 @@ Recordings/
 *.mdb
 *.opendb
 *.VC.db
+
+# Rider
+.idea/
+*.sln.iml
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Crash reports
+sysinfo.txt
+
+# Build artifacts
+*.apk
+*.aab
+*.unitypackage
+*.app
+

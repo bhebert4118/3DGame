@@ -1,0 +1,48 @@
+Low Poly Bunker Free
+
+Documentation
+
+Every prop is a prefab in Assets/LowPolyBunkerFree/Prefabs/: drag it into a scene. 1 unit = 1 m; a prop's pivot
+is on the floor (or, for a wall prop, on the wall) it rests against. Each part has a box collider.
+
+Look
+Every prefab uses Materials/, on the shader LowPolyBunkerFree/Stylized Lit: the texture times the occlusion baked into the
+vertex colours (Baked Occlusion), lit by the scene's lights with a soft falloff (Light Wrap), casting and
+taking shadows, with fog; Glow Map's texels light themselves (lamps, screens, signs; Glow Strength).
+Render pipelines: Built-in and URP: every material uses the pack's own lit shader, with a SubShader for each. Not HDRP, where the materials show magenta until given an HDRP Lit shader.
+
+Animations
+A prop with moving parts has an Animation component with its clips. Standalone decorative loops start automatically.
+Clips controlled by use, pickup, gun or melee behavior wait for that control. Play a clip directly with:
+    GetComponent<Animation>().Play("open");
+Demo/Demo.unity circles the props and plays every animation in turn (Scripts/PropsDemo.cs).
+
+Machines
+A prop that works (its kind is in the list below) has Scripts/Machine.cs on its prefab, set up in the
+inspector: its kind (what a use does: Switch, Button, Turn, Slot, Keypad, Panel, Item, Powered, Gauge),
+the machines it needs to be powered, and UnityEvents for what it does (onSwitched, onLive, onRefused,
+onUsed, onKeyed, onPicked). Machine.cs's comments say what each kind does.
+    lever.Use(carried);                     // the player's use; carried: the items they hold
+    keypad.Use(carried, "keypad_key_4");    // a key: the part they point at
+    door.needs = new[] { lever };           // the door is powered while the lever is on
+
+Textures: atlas.png 2048x2048, atlas_glow.png 2048x2048, ceiling_bunker.png 128x128, floor_bunker.png 128x128, floor_hazard_l.png 128x128, wall_bunker.png 128x128, wall_bunker_dado.png 128x128, filtered with mipmaps, colour only: the shading is baked into vertex colours, so no normal maps.
+Icons/: an inventory icon per prop, named after it, imported as a UI sprite.
+
+Props (triangles, size in metres: width x height x depth, animations)
+- floor_bunker: Bunker Floor, 8 tris, 2 x 0 x 2
+- floor_bunker_hazard: Bunker Floor with a Hazard Edge, 8 tris, 2 x 0 x 2
+- ceiling_bunker: Bunker Ceiling, 8 tris, 2 x 0 x 2
+- wall_bunker: Bunker Wall, 36 tris, 2 x 4 x 0.25
+- wall_bunker_stained: Stained Bunker Wall, 36 tris, 2 x 4 x 0.25
+- wall_bunker_post: Bunker Post, 34 tris, 0.25 x 4 x 0.25
+- wall_bunker_doorway: Bunker Doorway, 72 tris, 2 x 4 x 0.25
+- door_bunker: Bunker Door, 624 tris, 1.18 x 2.3 x 0.395, open; a machine, powered
+- breaker_main: Main Breaker, 1106 tris, 0.6 x 1.678 x 0.474, throw; a machine, switch
+- alarm_beacon: Alarm Beacon, 668 tris, 0.186 x 0.598 x 0.313, spin; a machine, powered
+- lamp_cage: Cage Lamp, 686 tris, 0.188 x 0.446 x 0.294; a machine, powered
+- lamp_emergency: Emergency Light, 564 tris, 0.26 x 0.528 x 0.16; a machine, powered
+- crate_military: Military Crate, 356 tris, 1.02 x 0.49 x 0.5
+- supply_can: Supply Can, 108 tris, 0.297 x 0.198 x 0.112
+- sandbags: Sandbag Wall, 1760 tris, 2.01 x 1.008 x 0.586
+- sign_bunker_restricted: Restricted Sign, 92 tris, 0.4 x 0.2 x 0.014
